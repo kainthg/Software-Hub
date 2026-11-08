@@ -1,151 +1,142 @@
 
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Software Hub | All Software in One Place</title>
-
-    <meta name="description" content="Discover software, download setups and explore installation guides at Software Hub.">
-
-    <meta name="theme-color" content="#0b1120">
-
-    <link rel="stylesheet" href="./style.css">
-
-    <script src="./script.js" defer></script>
+    <title>Software Hub</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
-
 <body>
 
-    <!-- NAVIGATION -->
+    <!-- NAVBAR -->
     <header class="navbar">
+        <a href="#" class="logo">Software<span>Hub</span></a>
 
-        <a href="#home" class="logo">
-            Software<span>Hub</span>
-        </a>
-
-        <nav>
+        <nav class="nav-links">
             <a href="#home">Home</a>
             <a href="#categories">Categories</a>
             <a href="#about">About</a>
         </nav>
 
+        <a href="mailto:kainth.goffical@gmail.com" class="contact-btn">
+            Contact Us
+        </a>
     </header>
 
-
-    <!-- HERO SECTION -->
+    <!-- HOME SECTION -->
     <section class="hero" id="home">
-
         <div class="hero-content">
-
-            <span class="hero-label">WELCOME TO SOFTWARE HUB</span>
+            <p class="hero-tag">WELCOME TO SOFTWARE HUB</p>
 
             <h1>
-                Everything You Need,
-                <span>One Software Hub.</span>
+                Find The Right
+                <span>Software</span>
+                For Your Needs
             </h1>
 
-            <p>
-                Discover software, explore useful tools,
-                download official setups and follow easy
-                installation guides.
+            <p class="hero-description">
+                Your simple destination to explore useful software,
+                tools and digital resources.
             </p>
 
-            <div class="search-box">
-
-                <input
-                    type="search"
-                    id="search"
-                    placeholder="Search your favorite software..."
-                    aria-label="Search software"
-                >
-
-                <button type="button" id="search-button">
-                    Search
-                </button>
-
-            </div>
-
+            <a href="#categories" class="main-btn">
+                Explore Categories
+            </a>
         </div>
-
     </section>
 
-
-    <!-- CATEGORIES -->
-    <section id="categories" class="section">
+    <!-- CATEGORIES SECTION -->
+    <section class="categories-section" id="categories">
 
         <div class="section-heading">
-            <span>EXPLORE</span>
-            <h2>Software Categories</h2>
-            <p>Find the right tools for your needs.</p>
+            <p class="small-heading">EXPLORE SOFTWARE</p>
+            <h2>Our Categories</h2>
+            <p>Select a category to explore different types of software.</p>
         </div>
 
         <div class="category-grid">
 
-            <button class="category-card active" type="button" data-category="All">
-                <span>🌐</span>
-                All Software
+            <button class="category-card" data-category="Office">
+                <span class="category-icon">📄</span>
+                <h3>OFFICE</h3>
+                <p>Office and productivity tools</p>
             </button>
 
-            <button class="category-card" type="button" data-category="Office">
-                <span>📄</span>
-                Office Software
+            <button class="category-card" data-category="Networking">
+                <span class="category-icon">🌐</span>
+                <h3>NETWORKING</h3>
+                <p>Networking and simulation tools</p>
             </button>
 
-            <button class="category-card" type="button" data-category="Networking">
-                <span>🌍</span>
-                Networking
+            <button class="category-card" data-category="Database">
+                <span class="category-icon">🗄️</span>
+                <h3>DATABASE</h3>
+                <p>Database management tools</p>
             </button>
 
-            <button class="category-card" type="button" data-category="Database">
-                <span>🗄️</span>
-                Database
+            <button class="category-card" data-category="Programming">
+                <span class="category-icon">💻</span>
+                <h3>PROGRAMMING</h3>
+                <p>Programming and coding tools</p>
             </button>
 
-            <button class="category-card" type="button" data-category="Programming">
-                <span>💻</span>
-                Programming
+            <button class="category-card" data-category="Design">
+                <span class="category-icon">🎨</span>
+                <h3>GRAPHIC DESIGN</h3>
+                <p>Creative and design software</p>
             </button>
 
-            <button class="category-card" type="button" data-category="Design">
-                <span>🎨</span>
-                Graphic Design
-            </button>
-
-            <button class="category-card" type="button" data-category="Utilities">
-                <span>🛠️</span>
-                Utilities
+            <button class="category-card" data-category="Utilities">
+                <span class="category-icon">🛠️</span>
+                <h3>UTILITIES</h3>
+                <p>Useful everyday utilities</p>
             </button>
 
         </div>
+
+        <p class="category-message" id="category-message">
+            Select a category to get started.
+        </p>
 
     </section>
 
+    <!-- ABOUT SECTION -->
+    <section class="about-section" id="about">
+        <p class="small-heading">WHO WE ARE</p>
+        <h2>About Software Hub</h2>
 
-    <!-- ABOUT / FOOTER -->
-    <footer id="about">
+        <p>
+            Software Hub is a simple platform designed to help users
+            discover useful software and digital tools in one place.
+        </p>
+    </section>
 
-        <div class="footer-content">
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+        <h2>Have Any Questions?</h2>
+        <p>Feel free to contact us for information or assistance.</p>
 
-            <h2>Software<span>Hub</span></h2>
+        <a href="mailto:kainth.goffical@gmail.com" class="main-btn">
+            Email Us
+        </a>
+    </section>
 
-            <p>
-                Your destination for software and installation guides.
-            </p>
+    <!-- FOOTER -->
+    <footer class="footer">
+        <h2>Software<span>Hub</span></h2>
 
-            <p class="designer-credit">
-                Designed &amp; Developed by
-                <span>Muhammad Abdul Rehman</span>
-            </p>
+        <p>
+            Email:
+            <a href="mailto:kainth.goffical@gmail.com">
+                kainth.goffical@gmail.com
+            </a>
+        </p>
 
-            <p class="copyright">
-                © 2026 Software Hub. All Rights Reserved.
-            </p>
-
-        </div>
-
+        <p class="copyright">
+            © 2026 Software Hub. All Rights Reserved.
+        </p>
     </footer>
 
 </body>
