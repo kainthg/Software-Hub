@@ -1,18 +1,25 @@
 
-// ===================================
-// SOFTWARE HUB - JAVASCRIPT
-// ===================================
+// ======================================
+// SOFTWARE HUB - MAIN JAVASCRIPT
+// ======================================
 
 // Get HTML elements
 const searchInput = document.getElementById("search");
-const searchButton = document.querySelector(".search-box button");
 const softwareList = document.getElementById("software-list");
+const noResults = document.getElementById("no-results");
+
+// Current selected category
+let selectedCategory = "All";
 
 // Get all software cards
 const softwareCards = document.querySelectorAll(".software-card");
 
-// Search software function
-function searchSoftware() {
+
+// ======================================
+// DISPLAY SOFTWARE
+// ======================================
+
+function displaySoftware() {
 
     const searchValue = searchInput.value
         .toLowerCase()
@@ -22,48 +29,60 @@ function searchSoftware() {
 
     softwareCards.forEach(card => {
 
-        const softwareName = card
-            .querySelector("h3")
+        const name = card.querySelector("h3")
             .textContent.toLowerCase();
 
-        const softwareDescription = card
-            .querySelector("p")
+        const description = card.querySelector("p")
             .textContent.toLowerCase();
 
-        if (
-            softwareName.includes(searchValue) ||
-            softwareDescription.includes(searchValue)
-        ) {
+        const category = card.dataset.category;
+
+        const matchesSearch =
+            name.includes(searchValue) ||
+            description.includes(searchValue);
+
+        const matchesCategory =
+            selectedCategory === "All" ||
+            category === selectedCategory;
+
+        if (matchesSearch && matchesCategory) {
+
             card.style.display = "block";
             found++;
+
         } else {
+
             card.style.display = "none";
+
         }
 
     });
 
-    // Show no results message
-    let noResults = document.getElementById("no-results");
+    // No results message
+    noResults.style.display =
+        found === 0 ? "block" : "none";
 
-    if (!noResults) {
-        noResults = document.createElement("p");
-        noResults.id = "no-results";
-        noResults.textContent = "No software found. Try another search.";
-        noResults.style.color = "#38bdf8";
-        noResults.style.marginTop = "20px";
-        softwareList.appendChild(noResults);
-    }
-
-    noResults.style.display = found === 0 ? "block" : "none";
 }
 
-// Search button click
-searchButton.addEventListener("click", searchSoftware);
+
+// ======================================
+// SEARCH SOFTWARE
+// ======================================
+
+function searchSoftware() {
+
+    selectedCategory = "All";
+
+    displaySoftware();
+
+}
+
 
 // Search while typing
 searchInput.addEventListener("input", searchSoftware);
 
-// Search using Enter key
+
+// Search with Enter key
 searchInput.addEventListener("keydown", function(event) {
 
     if (event.key === "Enter") {
@@ -72,8 +91,30 @@ searchInput.addEventListener("keydown", function(event) {
 
 });
 
-// ===================================
-// SOFTWARE HUB INITIALIZATION
-// ===================================
 
-console.log("Software Hub JavaScript Loaded Successfully!");
+// ======================================
+// CATEGORY FILTER
+// ======================================
+
+function filterCategory(category) {
+
+    selectedCategory = category;
+
+    searchInput.value = "";
+
+    displaySoftware();
+
+    document.getElementById("software").scrollIntoView({
+        behavior: "smooth"
+    });
+
+}
+
+
+// ======================================
+// INITIALIZE WEBSITE
+// ======================================
+
+displaySoftware();
+
+console.log("Software Hub is running successfully!");
