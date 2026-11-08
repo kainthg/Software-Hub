@@ -1,166 +1,251 @@
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+/* =================================
+   SOFTWARE HUB - MAIN CSS
+================================= */
 
-    <title>Software Hub | All Software in One Place</title>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <meta name="description" content="Discover software, download setups and explore installation guides at Software Hub.">
+html {
+    scroll-behavior: smooth;
+}
 
-    <link rel="stylesheet" href="style.css">
-</head>
+body {
+    background: #0b1120;
+    color: #ffffff;
+    font-family: Arial, sans-serif;
+}
 
-<body>
+/* Navigation */
 
-    <!-- Navigation -->
-    <header class="navbar">
-        <div class="logo">
-            Software<span>Hub</span>
-        </div>
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 22px 8%;
+    background: #111827;
+    border-bottom: 1px solid #263449;
+}
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#software">Software</a>
-            <a href="#about">About</a>
-        </nav>
-    </header>
+.logo {
+    font-size: 27px;
+    font-weight: bold;
+}
 
-    <!-- Hero Section -->
-    <section class="hero">
+.logo span {
+    color: #38bdf8;
+}
 
-        <h1>
-            Everything You Need,<br>
-            <span>One Software Hub.</span>
-        </h1>
+nav a {
+    color: #cbd5e1;
+    text-decoration: none;
+    margin-left: 25px;
+    transition: 0.3s;
+}
 
-        <p>
-            Discover software, download setups
-            and follow easy installation guides.
-        </p>
+nav a:hover {
+    color: #38bdf8;
+}
 
-        <div class="search-box">
-            <input
-                type="text"
-                id="search"
-                placeholder="Search your favorite software..."
-            >
+/* Hero Section */
 
-            <button onclick="searchSoftware()">
-                Search
-            </button>
-        </div>
+.hero {
+    text-align: center;
+    padding: 110px 20px;
+    background: linear-gradient(
+        135deg,
+        #0b1120,
+        #172554
+    );
+}
 
-    </section>
+.hero h1 {
+    font-size: 48px;
+    line-height: 1.3;
+    margin-bottom: 20px;
+}
 
-    <!-- Categories -->
-    <section id="categories" class="section">
+.hero h1 span {
+    color: #38bdf8;
+}
 
-        <h2>Explore Categories</h2>
+.hero p {
+    color: #aab4c5;
+    font-size: 17px;
+    margin-bottom: 30px;
+}
 
-        <div class="category-grid">
+/* Search Box */
 
-            <div class="category-card" onclick="filterCategory('All')">
-                All Software
-            </div>
+.search-box {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
 
-            <div class="category-card" onclick="filterCategory('Office')">
-                Office Software
-            </div>
+.search-box input {
+    width: 420px;
+    max-width: 100%;
+    padding: 16px;
+    border: 1px solid #334155;
+    border-radius: 8px;
+    background: #1e293b;
+    color: white;
+}
 
-            <div class="category-card" onclick="filterCategory('Networking')">
-                Networking
-            </div>
+.search-box button,
+.software-card button {
+    background: #0284c7;
+    color: white;
+    border: none;
+    padding: 14px 22px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
 
-            <div class="category-card" onclick="filterCategory('Database')">
-                Database
-            </div>
+.search-box button:hover,
+.software-card button:hover {
+    background: #0369a1;
+}
 
-            <div class="category-card" onclick="filterCategory('Programming')">
-                Programming
-            </div>
+/* Sections */
 
-            <div class="category-card" onclick="filterCategory('Design')">
-                Graphic Design
-            </div>
+.section {
+    padding: 65px 8%;
+}
 
-            <div class="category-card" onclick="filterCategory('Utilities')">
-                Utilities
-            </div>
+.section h2 {
+    font-size: 28px;
+    margin-bottom: 30px;
+}
 
-        </div>
+/* Categories */
 
-    </section>
+.category-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(180px, 1fr));
+    gap: 18px;
+}
 
-    <!-- Popular Software -->
-    <section id="software" class="section">
+.category-card {
+    background: #172033;
+    padding: 28px 15px;
+    text-align: center;
+    border: 1px solid #263449;
+    border-radius: 12px;
+    transition: 0.3s;
+    cursor: pointer;
+}
 
-        <h2>Popular Software</h2>
+.category-card:hover {
+    border-color: #38bdf8;
+    transform: translateY(-5px);
+}
 
-        <div id="software-list" class="software-grid">
+/* Software Cards */
 
-            <div class="software-card" data-category="Office">
-                <h3>Microsoft Office</h3>
-                <p>Productivity and office tools.</p>
-                <button onclick="viewDetails('Microsoft Office')">
-                    View Details
-                </button>
-            </div>
+.software-grid {
+    display: grid;
+    grid-template-columns:
+        repeat(auto-fit, minmax(220px, 1fr));
+    gap: 22px;
+}
 
-            <div class="software-card" data-category="Networking">
-                <h3>Cisco Packet Tracer</h3>
-                <p>Network simulation software.</p>
-                <button onclick="viewDetails('Cisco Packet Tracer')">
-                    View Details
-                </button>
-            </div>
+.software-card {
+    background: #172033;
+    padding: 28px;
+    border: 1px solid #263449;
+    border-radius: 12px;
+    transition: 0.3s;
+}
 
-            <div class="software-card" data-category="Database">
-                <h3>SQL Server</h3>
-                <p>Database management software.</p>
-                <button onclick="viewDetails('SQL Server')">
-                    View Details
-                </button>
-            </div>
+.software-card:hover {
+    transform: translateY(-5px);
+    border-color: #38bdf8;
+}
 
-            <div class="software-card" data-category="Programming">
-                <h3>Visual Studio Code</h3>
-                <p>Code editor for developers.</p>
-                <button onclick="viewDetails('Visual Studio Code')">
-                    View Details
-                </button>
-            </div>
+.software-card h3 {
+    margin-bottom: 15px;
+    font-size: 20px;
+}
 
-        </div>
+.software-card p {
+    color: #aab4c5;
+    margin-bottom: 22px;
+    line-height: 1.6;
+}
 
-        <p id="no-results">
-            No software found. Try another search.
-        </p>
+/* No Results */
 
-    </section>
+#no-results {
+    display: none;
+    color: #aab4c5;
+    margin-top: 25px;
+}
 
-    <!-- Footer -->
-    <footer id="about">
+/* Footer */
 
-        <h2>Software Hub</h2>
+footer {
+    background: #111827;
+    text-align: center;
+    padding: 40px 20px;
+    border-top: 1px solid #263449;
+}
 
-        <p>
-            Your destination for software and installation guides.
-        </p>
+footer h2 {
+    color: #38bdf8;
+    margin-bottom: 12px;
+}
 
-        <p>
-            © 2026 Software Hub. All Rights Reserved.
-        </p>
+footer p {
+    color: #94a3b8;
+    margin-top: 12px;
+}
 
-        <div class="designer">
-            Designed by <span>Muhammad Abdul Rehman</span>
-        </div>
+/* Designer Credit */
 
-    </footer>
+.designer {
+    margin-top: 25px;
+    padding-top: 20px;
+    border-top: 1px solid #263449;
+    color: #94a3b8;
+    font-size: 15px;
+}
 
-    <script src="script.js"></script>
+.designer span {
+    color: #38bdf8;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+}
 
-</body>
-</html>
+/* Mobile Responsive */
+
+@media (max-width: 650px) {
+
+    .navbar {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    nav a {
+        margin: 5px;
+    }
+
+    .hero h1 {
+        font-size: 32px;
+    }
+
+    .hero {
+        padding: 75px 15px;
+    }
+
+    .section {
+        padding: 45px 5%;
+    }
+}
