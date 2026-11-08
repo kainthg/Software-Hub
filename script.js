@@ -1,334 +1,186 @@
 
-<!DOCTYPE html>
-<html lang="en">
+/* =====================================
+   SOFTWARE HUB - JAVASCRIPT
+===================================== */
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+document.addEventListener("DOMContentLoaded", function () {
 
-    <title>Software Hub | All Software in One Place</title>
+    const searchInput = document.getElementById("search");
+    const searchButton = document.getElementById("search-button");
+    const softwareCards = document.querySelectorAll(".software-card");
+    const categories = document.querySelectorAll(".category-card");
+    const noResults = document.getElementById("no-results");
 
-    <meta name="description" content="Discover software, download setups and explore installation guides at Software Hub.">
+    const modal = document.getElementById("software-modal");
+    const closeModal = document.getElementById("close-modal");
+    const modalTitle = document.getElementById("modal-title");
+    const modalDescription = document.getElementById("modal-description");
+    const modalLink = document.getElementById("modal-link");
 
-    <meta name="theme-color" content="#0b1120">
+    let selectedCategory = "All";
 
-    <link rel="stylesheet" href="./style.css">
+    // FILTER SOFTWARE
+    function displaySoftware() {
 
-    <script src="./script.js" defer></script>
-</head>
+        const searchValue = searchInput.value.toLowerCase().trim();
 
-<body>
+        let found = 0;
 
-    <!-- NAVIGATION -->
-    <header class="navbar">
+        softwareCards.forEach(function (card) {
 
-        <a href="#home" class="logo">
-            Software<span>Hub</span>
-        </a>
+            const name = card.querySelector("h3").textContent.toLowerCase();
 
-        <nav>
-            <a href="#home">Home</a>
-            <a href="#categories">Categories</a>
-            <a href="#software">Software</a>
-            <a href="#about">About</a>
-        </nav>
+            const description = card.querySelector("p").textContent.toLowerCase();
 
-    </header>
+            const category = card.dataset.category;
 
+            const matchesSearch =
+                name.includes(searchValue) ||
+                description.includes(searchValue) ||
+                category.toLowerCase().includes(searchValue);
 
-    <!-- HERO SECTION -->
-    <section class="hero" id="home">
+            const matchesCategory =
+                selectedCategory === "All" ||
+                category === selectedCategory;
 
-        <div class="hero-content">
+            if (matchesSearch && matchesCategory) {
 
-            <span class="hero-label">WELCOME TO SOFTWARE HUB</span>
+                card.hidden = false;
+                found++;
 
-            <h1>
-                Everything You Need,
-                <span>One Software Hub.</span>
-            </h1>
+            } else {
 
-            <p>
-                Discover software, explore useful tools,
-                download official setups and follow easy
-                installation guides.
-            </p>
+                card.hidden = true;
 
-            <div class="search-box">
+            }
 
-                <input
-                    type="search"
-                    id="search"
-                    placeholder="Search your favorite software..."
-                    aria-label="Search software"
-                >
+        });
 
-                <button type="button" id="search-button">
-                    Search
-                </button>
+        noResults.hidden = found !== 0;
+    }
 
-            </div>
 
-        </div>
+    // SEARCH BUTTON
+    searchButton.addEventListener("click", function () {
 
-    </section>
+        selectedCategory = "All";
 
+        categories.forEach(function (category) {
+            category.classList.toggle(
+                "active",
+                category.dataset.category === "All"
+            );
+        });
 
-    <!-- CATEGORIES -->
-    <section id="categories" class="section">
+        displaySoftware();
+    });
 
-        <div class="section-heading">
-            <span>EXPLORE</span>
-            <h2>Software Categories</h2>
-            <p>Find the right tools for your needs.</p>
-        </div>
 
-        <div class="category-grid">
+    // LIVE SEARCH
+    searchInput.addEventListener("input", function () {
 
-            <button class="category-card active" type="button" data-category="All">
-                <span>🌐</span>
-                All Software
-            </button>
+        displaySoftware();
 
-            <button class="category-card" type="button" data-category="Office">
-                <span>📄</span>
-                Office Software
-            </button>
+    });
 
-            <button class="category-card" type="button" data-category="Networking">
-                <span>🌍</span>
-                Networking
-            </button>
 
-            <button class="category-card" type="button" data-category="Database">
-                <span>🗄️</span>
-                Database
-            </button>
+    // ENTER KEY SEARCH
+    searchInput.addEventListener("keydown", function (event) {
 
-            <button class="category-card" type="button" data-category="Programming">
-                <span>💻</span>
-                Programming
-            </button>
+        if (event.key === "Enter") {
 
-            <button class="category-card" type="button" data-category="Design">
-                <span>🎨</span>
-                Graphic Design
-            </button>
+            selectedCategory = "All";
 
-            <button class="category-card" type="button" data-category="Utilities">
-                <span>🛠️</span>
-                Utilities
-            </button>
+            categories.forEach(function (category) {
+                category.classList.toggle(
+                    "active",
+                    category.dataset.category === "All"
+                );
+            });
 
-        </div>
+            displaySoftware();
 
-    </section>
+        }
 
+    });
 
-    <!-- SOFTWARE SECTION -->
-    <section id="software" class="section software-section">
 
-        <div class="section-heading">
-            <span>OUR COLLECTION</span>
-            <h2>Popular Software</h2>
-            <p>Explore useful software and official download sources.</p>
-        </div>
+    // CATEGORY FILTER
+    categories.forEach(function (button) {
 
-        <div id="software-list" class="software-grid">
+        button.addEventListener("click", function () {
 
-            <!-- OFFICE -->
-            <article class="software-card" data-category="Office">
+            selectedCategory = button.dataset.category;
 
-                <div class="software-icon">📄</div>
+            categories.forEach(function (category) {
+                category.classList.toggle(
+                    "active",
+                    category === button
+                );
+            });
 
-                <span class="software-category">OFFICE</span>
+            searchInput.value = "";
 
-                <h3>Microsoft Office</h3>
+            displaySoftware();
 
-                <p>Productivity tools for documents, spreadsheets and presentations.</p>
+            document.getElementById("software").scrollIntoView({
+                behavior: "smooth"
+            });
 
-                <button type="button"
-                    class="details-button"
-                    data-name="Microsoft Office"
-                    data-description="Microsoft Office provides productivity tools for creating documents, spreadsheets and presentations."
-                    data-link="https://www.microsoft.com/microsoft-365">
+        });
 
-                    View Details
-                </button>
+    });
 
-            </article>
 
+    // SOFTWARE DETAILS
+    document.querySelectorAll(".details-button").forEach(function (button) {
 
-            <!-- NETWORKING -->
-            <article class="software-card" data-category="Networking">
+        button.addEventListener("click", function () {
 
-                <div class="software-icon">🌐</div>
+            modalTitle.textContent = button.dataset.name;
 
-                <span class="software-category">NETWORKING</span>
+            modalDescription.textContent = button.dataset.description;
 
-                <h3>Cisco Packet Tracer</h3>
+            modalLink.href = button.dataset.link;
 
-                <p>Network simulation software for learning networking concepts.</p>
+            modal.hidden = false;
 
-                <button type="button"
-                    class="details-button"
-                    data-name="Cisco Packet Tracer"
-                    data-description="Cisco Packet Tracer helps students and professionals simulate network configurations and practice networking."
-                    data-link="https://www.netacad.com/cisco-packet-tracer">
+        });
 
-                    View Details
-                </button>
+    });
 
-            </article>
 
+    // CLOSE MODAL
+    closeModal.addEventListener("click", function () {
 
-            <!-- DATABASE -->
-            <article class="software-card" data-category="Database">
+        modal.hidden = true;
 
-                <div class="software-icon">🗄️</div>
+    });
 
-                <span class="software-category">DATABASE</span>
 
-                <h3>SQL Server</h3>
+    // CLOSE WHEN CLICKING OUTSIDE
+    modal.addEventListener("click", function (event) {
 
-                <p>Database management platform for storing and managing data.</p>
+        if (event.target === modal) {
+            modal.hidden = true;
+        }
 
-                <button type="button"
-                    class="details-button"
-                    data-name="SQL Server"
-                    data-description="Microsoft SQL Server is a relational database management system used to store, manage and query data."
-                    data-link="https://www.microsoft.com/sql-server">
+    });
 
-                    View Details
-                </button>
 
-            </article>
+    // CLOSE WITH ESCAPE KEY
+    document.addEventListener("keydown", function (event) {
 
+        if (event.key === "Escape") {
+            modal.hidden = true;
+        }
 
-            <!-- PROGRAMMING -->
-            <article class="software-card" data-category="Programming">
+    });
 
-                <div class="software-icon">💻</div>
 
-                <span class="software-category">PROGRAMMING</span>
+    // INITIALIZE
+    displaySoftware();
 
-                <h3>Visual Studio Code</h3>
+    console.log("Software Hub loaded successfully!");
 
-                <p>Powerful and lightweight code editor for developers.</p>
-
-                <button type="button"
-                    class="details-button"
-                    data-name="Visual Studio Code"
-                    data-description="Visual Studio Code is a free source code editor with extensions, debugging and support for many programming languages."
-                    data-link="https://code.visualstudio.com/">
-
-                    View Details
-                </button>
-
-            </article>
-
-
-            <!-- DESIGN -->
-            <article class="software-card" data-category="Design">
-
-                <div class="software-icon">🎨</div>
-
-                <span class="software-category">GRAPHIC DESIGN</span>
-
-                <h3>Adobe Photoshop</h3>
-
-                <p>Professional image editing and graphic design software.</p>
-
-                <button type="button"
-                    class="details-button"
-                    data-name="Adobe Photoshop"
-                    data-description="Adobe Photoshop is a professional tool for photo editing, image manipulation and graphic design."
-                    data-link="https://www.adobe.com/products/photoshop.html">
-
-                    View Details
-                </button>
-
-            </article>
-
-
-            <!-- UTILITIES -->
-            <article class="software-card" data-category="Utilities">
-
-                <div class="software-icon">🛠️</div>
-
-                <span class="software-category">UTILITIES</span>
-
-                <h3>7-Zip</h3>
-
-                <p>Free file compression and archive management utility.</p>
-
-                <button type="button"
-                    class="details-button"
-                    data-name="7-Zip"
-                    data-description="7-Zip is a free file archiver that supports multiple compression formats."
-                    data-link="https://www.7-zip.org/">
-
-                    View Details
-                </button>
-
-            </article>
-
-        </div>
-
-        <p id="no-results" hidden>
-            No software found. Try another search.
-        </p>
-
-    </section>
-
-
-    <!-- ABOUT / FOOTER -->
-    <footer id="about">
-
-        <div class="footer-content">
-
-            <h2>Software<span>Hub</span></h2>
-
-            <p>
-                Your destination for software and installation guides.
-            </p>
-
-            <p class="designer-credit">
-                Designed &amp; Developed by
-                <span>Muhammad Abdul Rehman</span>
-            </p>
-
-            <p class="copyright">
-                © 2026 Software Hub. All Rights Reserved.
-            </p>
-
-        </div>
-
-    </footer>
-
-
-    <!-- SOFTWARE DETAILS MODAL -->
-    <div class="modal" id="software-modal" hidden>
-
-        <div class="modal-content">
-
-            <button type="button" class="close-modal" id="close-modal" aria-label="Close">
-                &times;
-            </button>
-
-            <span class="modal-label">SOFTWARE DETAILS</span>
-
-            <h2 id="modal-title">Software Name</h2>
-
-            <p id="modal-description"></p>
-
-            <a href="#" id="modal-link" target="_blank" rel="noopener noreferrer">
-                Visit Official Website
-            </a>
-
-        </div>
-
-    </div>
-
-</body>
-</html>
+});
