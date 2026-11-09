@@ -1,9 +1,3 @@
-/* =====================================
-   SOFTWARE HUB - MAIN CSS
-===================================== */
-
-/* GLOBAL */
-
 * {
     margin: 0;
     padding: 0;
@@ -24,9 +18,6 @@ body {
 a {
     transition: 0.3s;
 }
-
-
-/* NAVBAR */
 
 .navbar {
     width: 100%;
@@ -82,9 +73,6 @@ a {
     background: #0369a1;
 }
 
-
-/* HERO SECTION */
-
 .hero {
     min-height: 500px;
     padding: 100px 7%;
@@ -92,22 +80,14 @@ a {
     align-items: center;
     justify-content: center;
     text-align: center;
-
-    background:
-        radial-gradient(
-            circle at top,
-            #17375a,
-            transparent 60%
-        ),
-        #0b1120;
+    background: radial-gradient(circle at top, #17375a, transparent 60%), #0b1120;
 }
 
 .hero-content {
     max-width: 800px;
 }
 
-.hero-tag,
-.small-heading {
+.hero-tag, .small-heading {
     color: #38bdf8;
     font-size: 13px;
     font-weight: bold;
@@ -149,9 +129,6 @@ a {
     transform: translateY(-3px);
 }
 
-
-/* CATEGORIES SECTION */
-
 .categories-section {
     padding: 85px 7%;
     background: #0e1728;
@@ -162,8 +139,7 @@ a {
     margin-bottom: 45px;
 }
 
-.section-heading h2,
-.about-section h2 {
+.section-heading h2, .about-section h2 {
     font-size: 35px;
     margin-bottom: 12px;
 }
@@ -171,9 +147,6 @@ a {
 .section-heading > p:last-child {
     color: #aebbd0;
 }
-
-
-/* CATEGORY GRID */
 
 .category-grid {
     display: grid;
@@ -220,68 +193,6 @@ a {
     border-bottom: none;
 }
 
-
-/* ABOUT SECTION */
-
-.about-section {
-    padding: 85px 7%;
-    text-align: center;
-    max-width: 1000px;
-    margin: auto;
-}
-
-.about-section h2 {
-    margin-bottom: 18px;
-}
-
-.about-section > p:not(.small-heading) {
-    color: #b8c5d8;
-    font-size: 16px;
-    line-height: 1.9;
-}
-
-
-/* QUESTIONS BOX */
-
-.questions-box {
-    margin: 45px auto 0;
-    max-width: 600px;
-    padding: 30px 20px;
-    background: #152238;
-    border: 1px solid #263b59;
-    border-radius: 12px;
-}
-
-.questions-box h3 {
-    color: #38bdf8;
-    font-size: 23px;
-    margin-bottom: 12px;
-}
-
-.questions-box p {
-    color: #b8c5d8;
-    margin-bottom: 22px;
-}
-
-.email-btn {
-    display: inline-block;
-    background: #0284c7;
-    color: white;
-    text-decoration: none;
-    padding: 11px 25px;
-    border-radius: 7px;
-    font-weight: bold;
-}
-
-.email-btn:hover {
-    background: #0369a1;
-}
-
-
-/* =====================================
-   INFO SECTION
-===================================== */
-
 .info-section {
     padding: 85px 7%;
     background: #0b1120;
@@ -318,11 +229,6 @@ a {
     background: #b91c1c;
 }
 
-
-/* =====================================
-   INFO CARD (LAPTOP FIX)
-===================================== */
-
 .info-card {
     max-width: 750px;
     margin: 30px auto 0;
@@ -331,7 +237,6 @@ a {
     border-radius: 16px;
     padding: 0 25px;
     text-align: center;
-
     max-height: 0;
     opacity: 0;
     overflow: hidden;
@@ -344,8 +249,6 @@ a {
     padding: 35px 25px;
 }
 
-
-/* Avatar */
 .info-avatar {
     width: 120px;
     height: 120px;
@@ -365,14 +268,12 @@ a {
     object-fit: cover;
 }
 
-/* Name */
 .info-name {
     color: #38bdf8;
     font-size: 24px;
     margin-bottom: 25px;
 }
 
-/* Info Grid */
 .info-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -380,7 +281,6 @@ a {
     text-align: left;
 }
 
-/* Email item full width */
 .info-grid .info-item:last-child {
     grid-column: 1 / -1;
 }
@@ -418,11 +318,6 @@ a {
     text-decoration: underline;
 }
 
-
-/* =====================================
-   UNIVERSITY CLICK-TO-SHOW LINK
-===================================== */
-
 .university-btn {
     background: none;
     border: none;
@@ -437,15 +332,10 @@ a {
     text-underline-offset: 4px;
 }
 
-.university-btn:hover {
+.university-btn:hover, .university-btn.active {
     color: #38bdf8;
 }
 
-.university-btn.active {
-    color: #38bdf8;
-}
-
-/* Link box hidden by default */
 .uni-link-box {
     max-height: 0;
     opacity: 0;
@@ -470,138 +360,134 @@ a {
     font-size: 13px;
     font-weight: bold;
     transition: 0.3s;
-    overflow-wrap: anywhere;
 }
 
 .uni-link-box a:hover {
     background: #0369a1;
-    transform: translateY(-2px);
 }
 
+.about-section {
+    padding: 85px 7%;
+    text-align: center;
+    max-width: 1000px;
+    margin: auto;
+}
 
-/* =====================================
-   UPDATED FOOTER (NEW DESIGN)
-===================================== */
+.about-section h2 {
+    margin-bottom: 18px;
+}
+
+.about-section > p:not(.small-heading) {
+    color: #b8c5d8;
+    font-size: 16px;
+    line-height: 1.9;
+}
+
+.questions-box {
+    margin: 45px auto 0;
+    max-width: 600px;
+    padding: 30px 20px;
+    background: #152238;
+    border: 1px solid #263b59;
+    border-radius: 12px;
+}
+
+.questions-box h3 {
+    color: #38bdf8;
+    font-size: 23px;
+    margin-bottom: 12px;
+}
+
+.questions-box p {
+    color: #b8c5d8;
+    margin-bottom: 22px;
+}
+
+.email-btn {
+    display: inline-block;
+    background: #0284c7;
+    color: white;
+    text-decoration: none;
+    padding: 11px 25px;
+    border-radius: 7px;
+    font-weight: bold;
+}
+
+.email-btn:hover {
+    background: #0369a1;
+}
 
 .footer {
     background: #070d18;
     border-top: 1px solid #24334c;
-    padding: 60px 7% 20px;
+    padding: 60px 20px 40px;
+    text-align: center;
 }
 
 .footer-container {
-    display: grid;
-    grid-template-columns: 2fr 1fr 1.5fr;
-    gap: 40px;
-    max-width: 1100px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-/* Footer Columns Common */
-.footer-col h3 {
-    color: #38bdf8;
-    font-size: 18px;
-    margin-bottom: 20px;
-    letter-spacing: 1px;
+.links-col {
+    margin-bottom: 50px;
 }
 
-/* Column 1: Brand */
-.brand-col h2 {
-    font-size: 28px;
+.links-col h3 {
     color: #ffffff;
-    margin-bottom: 15px;
+    font-size: 22px;
+    margin-bottom: 25px;
+    font-weight: bold;
 }
 
-.brand-col h2 span {
-    color: #38bdf8;
-}
-
-.brand-col p {
-    color: #aebbd0;
-    font-size: 15px;
-    line-height: 1.8;
-    max-width: 300px;
-}
-
-/* Column 2: Links */
 .links-col ul {
     list-style: none;
-}
-
-.links-col ul li {
-    margin-bottom: 12px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .links-col ul li a {
     color: #aebbd0;
     text-decoration: none;
-    font-size: 15px;
+    font-size: 16px;
     transition: 0.3s;
 }
 
 .links-col ul li a:hover {
     color: #38bdf8;
-    padding-left: 5px;
 }
 
-/* Column 3: Contact */
-.contact-col p {
-    color: #aebbd0;
-    font-size: 15px;
-    margin-bottom: 15px;
-}
-
-.footer-email {
-    display: inline-block;
-    color: #ffffff;
-    text-decoration: none;
-    background: #152238;
-    padding: 10px 16px;
-    border-radius: 8px;
-    border: 1px solid #263b59;
-    transition: 0.3s;
-}
-
-.footer-email:hover {
-    background: #0284c7;
-    border-color: #38bdf8;
-}
-
-/* Bottom Copyright Section */
 .footer-bottom {
-    margin-top: 50px;
-    padding-top: 20px;
-    border-top: 1px solid #24334c;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     align-items: center;
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
+    gap: 15px;
 }
 
-.footer-bottom .copyright {
-    color: #8190a6;
-    font-size: 14px;
-    margin: 0;
-}
-
-.footer-bottom .designer-credit {
-    color: #8190a6;
-    font-size: 14px;
-    margin: 0;
-}
-
-.footer-bottom .designer-credit span {
-    color: #38bdf8;
+.developed-by {
+    color: #aebbd0;
+    font-size: 16px;
     font-weight: bold;
 }
 
+.designer-box {
+    border: 2px solid #38bdf8;
+    border-radius: 8px;
+    padding: 10px 35px;
+    background: #101a2e;
+    box-shadow: 0 4px 15px rgba(56, 189, 248, 0.1);
+}
 
-/* TABLET RESPONSIVE */
+.designer-box span {
+    color: #38bdf8;
+    font-size: 20px;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
 
 @media (max-width: 768px) {
-
     .navbar {
         padding: 16px 5%;
         flex-wrap: wrap;
@@ -619,31 +505,13 @@ a {
     .hero h1 {
         font-size: 39px;
     }
-
-    /* Footer Tablet */
-    .footer-container {
-        grid-template-columns: 1fr;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .brand-col p {
-        margin: 0 auto;
-    }
-
-    .footer-bottom {
-        flex-direction: column;
+    
+    .links-col ul {
         gap: 15px;
-        text-align: center;
     }
-
 }
 
-
-/* MOBILE RESPONSIVE */
-
 @media (max-width: 550px) {
-
     .navbar {
         justify-content: space-between;
     }
@@ -656,7 +524,8 @@ a {
         order: 3;
         width: 100%;
         justify-content: center;
-        gap: 25px;
+        gap: 20px;
+        flex-wrap: wrap;
     }
 
     .navbar nav a {
@@ -685,8 +554,7 @@ a {
         padding: 65px 6%;
     }
 
-    .section-heading h2,
-    .about-section h2 {
+    .section-heading h2, .about-section h2 {
         font-size: 29px;
     }
 
@@ -706,7 +574,6 @@ a {
         padding: 25px 15px;
     }
 
-    /* Info Section Mobile */
     .info-grid {
         grid-template-columns: 1fr;
     }
@@ -726,5 +593,9 @@ a {
     .info-name {
         font-size: 20px;
     }
-
+    
+    .links-col ul {
+        flex-direction: column;
+        gap: 15px;
+    }
 }
