@@ -1,22 +1,11 @@
-/* =====================================
-   SOFTWARE HUB - MAIN JAVASCRIPT
-===================================== */
-
 document.addEventListener("DOMContentLoaded", function () {
-
-    console.log("Software Hub is running successfully!");
-
-    /* ===============================
-       INFO TOGGLE FUNCTIONALITY
-    ================================ */
 
     const infoToggle = document.getElementById("infoToggle");
     const infoCard = document.getElementById("infoCard");
 
     if (infoToggle && infoCard) {
-
         infoToggle.addEventListener("click", function () {
-
+            void infoCard.offsetHeight; // Laptop fix
             infoCard.classList.toggle("show");
             infoToggle.classList.toggle("active");
 
@@ -25,27 +14,18 @@ document.addEventListener("DOMContentLoaded", function () {
             } else {
                 infoToggle.querySelector("span").textContent = "👤 View My Info";
             }
-
         });
-
     }
-
-    /* ===============================
-       UNIVERSITY LINK TOGGLE
-    ================================ */
 
     const uniToggle = document.getElementById("uniToggle");
     const uniLinkBox = document.getElementById("uniLinkBox");
 
     if (uniToggle && uniLinkBox) {
-
         uniToggle.addEventListener("click", function () {
-
+            void uniLinkBox.offsetHeight; // Laptop fix
             uniLinkBox.classList.toggle("show");
             uniToggle.classList.toggle("active");
-
         });
-
     }
 
 });
