@@ -26,11 +26,14 @@ a {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #101a2e;
-    border-bottom: 1px solid #24334c;
+    background: linear-gradient(rgba(11, 17, 32, 0.5), rgba(11, 17, 32, 0.5)), url('./h.bg');
+    background-size: cover;
+    background-position: center;
+    border-bottom: 2px solid #38bdf8;
     position: sticky;
     top: 0;
     z-index: 100;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 .logo {
