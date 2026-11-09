@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (infoToggle && infoCard) {
         infoToggle.addEventListener("click", function () {
-            void infoCard.offsetHeight; // Laptop fix
+            void infoCard.offsetHeight;
             infoCard.classList.toggle("show");
             infoToggle.classList.toggle("active");
 
@@ -22,7 +22,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (uniToggle && uniLinkBox) {
         uniToggle.addEventListener("click", function () {
-            void uniLinkBox.offsetHeight; // Laptop fix
+            void uniLinkBox.offsetHeight;
             uniLinkBox.classList.toggle("show");
             uniToggle.classList.toggle("active");
         });
