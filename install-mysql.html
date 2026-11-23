@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>How to Install MySQL | Software Hub</title>
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        .guide-container {
+            max-width: 800px;
+            margin: 50px auto;
+            padding: 40px;
+            background: #152238;
+            border: 1px solid #263b59;
+            border-radius: 12px;
+            text-align: left;
+        }
+        .guide-container h2 { color: #38bdf8; margin-bottom: 20px; font-size: 28px; }
+        .guide-step { margin-bottom: 25px; padding-bottom: 15px; border-bottom: 1px solid #293a53; }
+        .guide-step h4 { color: #ffffff; font-size: 18px; margin-bottom: 8px; }
+        .guide-step p { color: #b8c5d8; font-size: 16px; line-height: 1.6; }
+        .back-btn {
+            display: inline-block; margin-top: 20px; background: #0284c7; color: white;
+            padding: 10px 20px; text-decoration: none; border-radius: 5px; font-weight: bold;
+        }
+        .back-btn:hover { background: #0369a1; }
+    </style>
+</head>
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Software<span>Hub</span></a>
+        <nav><a href="index.html">Home</a></nav>
+        <a href="database.html" class="contact-btn">Back to Apps</a>
+    </header>
+
+    <main>
+        <div class="guide-container">
+            <h2>How to Install MySQL</h2>
+            <p style="color: #aebbd0; margin-bottom: 30px;">Follow these steps to install MySQL Server and Workbench on your Windows PC.</p>
+
+            <div class="guide-step">
+                <h4>Step 1: Download the Installer</h4>
+                <p>Go to the official MySQL download page and download the "MySQL Installer for Windows" (MSI Installer).</p>
+            </div>
+
+            <div class="guide-step">
+                <h4>Step 2: Run the Installer</h4>
+                <p>Double-click the downloaded file. Accept the license agreement and click "Next".</p>
+            </div>
+
+            <div class="guide-step">
+                <h4>Step 3: Choose Setup Type</h4>
+                <p>Select <strong>"Developer Default"</strong> for a complete installation (includes Server, Workbench, and Connectors) or "Custom" to choose manually. Click "Next".</p>
+            </div>
+
+            <div class="guide-step">
+                <h4>Step 4: Install Requirements</h4>
+                <p>The installer might ask you to install some required software (like Visual C++ Redistributable). Click "Execute" and then "Next".</p>
+            </div>
+
+            <div class="guide-step">
+                <h4>Step 5: MySQL Server Configuration</h4>
+                <p>Choose "Standalone MySQL Server / Classic MySQL Replication". Keep the default port (3306) and authentication method, then set a <strong>Root Password</strong>. <em>(Remember this password, you will need it later!)</em></p>
+            </div>
+
+            <div class="guide-step">
+                <h4>Step 6: Finish Installation</h4>
+                <p>Click "Execute" to install all components. Once done, click "Finish". You can now open MySQL Workbench from your Start Menu.</p>
+            </div>
+
+            <a href="database.html" class="back-btn">← Back to Database Tools</a>
+        </div>
+    </main>
+</body>
+</html>
