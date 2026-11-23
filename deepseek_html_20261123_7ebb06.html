@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Networking Apps | Software Hub</title>
+    <link rel="stylesheet" href="./style.css">
+    
+    <style>
+        /* Networking Page ka Background */
+        .networking-hero {
+            min-height: 350px;
+            padding: 60px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            
+            /* Dark Overlay + Aapki World Map Image */
+            background: linear-gradient(
+                rgba(11, 17, 32, 0.70), 
+                rgba(11, 17, 32, 0.90)
+            ), 
+            url('./network-bg.jpg'); /* Yahan image ka naam check kar lein */
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 2px solid #38bdf8; 
+        }
+
+        .networking-hero .hero-content h1 {
+            font-size: 52px;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .networking-hero .hero-content h1 span {
+            color: #38bdf8;
+        }
+
+        /* Mobile ke liye adjust */
+        @media (max-width: 550px) {
+            .networking-hero {
+                padding: 50px 6%;
+                min-height: 250px;
+            }
+            .networking-hero .hero-content h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Software<span>Hub</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="index.html#info">Info</a>
+            <a href="index.html#about">About Us</a>
+        </nav>
+        <a href="index.html" class="contact-btn">Back to Home</a>
+    </header>
+
+    <main>
+        <!-- 1. Background Hero Section -->
+        <section class="networking-hero">
+            <div class="hero-content">
+                <p class="hero-tag">CATEGORY</p>
+                <h1>Networking <span>Tools</span></h1>
+                <p class="hero-description">Essential software for network analysis, simulation and management.</p>
+            </div>
+        </section>
+
+        <!-- 2. Apps Section -->
+        <section class="categories-section">
+            <div class="category-grid">
+                
+                <!-- Software 1: Cisco Packet Tracer -->
+                <article class="category-card" style="padding: 25px; text-align: left; cursor: default;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 30px;">🌐</span> 
+                        <h3 style="margin: 0;">Cisco Packet Tracer</h3>
+                    </div>
+                    <p style="color: #aebbd0; font-size: 15px; margin-bottom: 20px;">
+                        A powerful network simulation tool for students to practice building networks.
+                    </p>
+                    
+                    <a href="https://www.netacad.com/courses/packet-tracer" target="_blank" class="main-btn" style="width: 100%; text-align: center; margin-bottom: 10px; display: block; box-sizing: border-box;">⬇ Download Setup</a>
+                    
+                    <a href="#" style="color: #38bdf8; text-decoration: none; font-size: 14px; display: block; text-align: center;">
+                        📖 View Installation Guide (Coming Soon)
+                    </a>
+                </article>
+
+                <!-- Software 2: Wireshark -->
+                <article class="category-card" style="padding: 25px; text-align: left; cursor: default;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 30px;">🦈</span>
+                        <h3 style="margin: 0;">Wireshark</h3>
+                    </div>
+                    <p style="color: #aebbd0; font-size: 15px; margin-bottom: 20px;">
+                        The world's foremost network protocol analyzer. Used for network troubleshooting and analysis.
+                    </p>
+                    
+                    <a href="https://www.wireshark.org/download.html" target="_blank" class="main-btn" style="width: 100%; text-align: center; margin-bottom: 10px; display: block; box-sizing: border-box;">⬇ Download Setup</a>
+                    
+                    <a href="#" style="color: #38bdf8; text-decoration: none; font-size: 14px; display: block; text-align: center;">
+                        📖 View Installation Guide (Coming Soon)
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p class="developed-by">Developed By</p>
+            <div class="designer-box">
+                <span>Kainth.G</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
