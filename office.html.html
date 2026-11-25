@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Office Apps | Software Hub</title>
+    <link rel="stylesheet" href="./style.css">
+    
+    <style>
+        /* Office Page ka Background */
+        .office-hero {
+            min-height: 350px;
+            padding: 60px 7%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            
+            /* Dark Overlay + Aapki Office 365 Image */
+            background: linear-gradient(
+                rgba(11, 17, 32, 0.85), /* White image ke liye overlay thoda dark kiya hai */
+                rgba(11, 17, 32, 0.95)
+            ), 
+            url('./office-bg.jpg'); 
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-bottom: 2px solid #38bdf8; 
+        }
+
+        .office-hero .hero-content h1 {
+            font-size: 52px;
+            line-height: 1.25;
+            margin-bottom: 20px;
+        }
+
+        .office-hero .hero-content h1 span {
+            color: #38bdf8;
+        }
+
+        /* Mobile ke liye adjust */
+        @media (max-width: 550px) {
+            .office-hero {
+                padding: 50px 6%;
+                min-height: 250px;
+            }
+            .office-hero .hero-content h1 {
+                font-size: 36px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header class="navbar">
+        <a href="index.html" class="logo">Software<span>Hub</span></a>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="index.html#categories">Categories</a>
+            <a href="index.html#info">Info</a>
+            <a href="index.html#about">About Us</a>
+        </nav>
+        <a href="index.html" class="contact-btn">Back to Home</a>
+    </header>
+
+    <main>
+        <!-- 1. Background Hero Section -->
+        <section class="office-hero">
+            <div class="hero-content">
+                <p class="hero-tag">CATEGORY</p>
+                <h1>Office <span>Apps</span></h1>
+                <p class="hero-description">Essential software for document creation, spreadsheets, and scanning.</p>
+            </div>
+        </section>
+
+        <!-- 2. Apps Section -->
+        <section class="categories-section">
+            <div class="category-grid">
+                
+                <!-- Software 1: Microsoft Office -->
+                <article class="category-card" style="padding: 25px; text-align: left; cursor: default;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 30px;">📊</span> 
+                        <h3 style="margin: 0;">MS Office</h3>
+                    </div>
+                    <p style="color: #aebbd0; font-size: 15px; margin-bottom: 20px;">
+                        The industry standard for productivity, including Word, Excel, and PowerPoint.
+                    </p>
+                    
+                    <!-- MS Office direct download nahi hota, official site par jaata hai -->
+                    <a href="https://www.microsoft.com/en-us/microsoft-365/buy/compare-all-microsoft-365-products" target="_blank" class="main-btn" style="width: 100%; text-align: center; margin-bottom: 10px; display: block; box-sizing: border-box;">🌐 Visit Official Site</a>
+                    
+                    <a href="install-ms-office.html" style="color: #38bdf8; text-decoration: none; font-size: 14px; display: block; text-align: center;">
+                        📖 View Installation Guide
+                    </a>
+                </article>
+
+                <!-- Software 2: WPS Office -->
+                <article class="category-card" style="padding: 25px; text-align: left; cursor: default;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 30px;">📝</span>
+                        <h3 style="margin: 0;">WPS Office</h3>
+                    </div>
+                    <p style="color: #aebbd0; font-size: 15px; margin-bottom: 20px;">
+                        A free, lightweight, and highly compatible alternative to Microsoft Office.
+                    </p>
+                    
+                    <a href="https://www.wps.com/download/" target="_blank" class="main-btn" style="width: 100%; text-align: center; margin-bottom: 10px; display: block; box-sizing: border-box;">⬇ Download Setup</a>
+                    
+                    <a href="install-wps.html" style="color: #38bdf8; text-decoration: none; font-size: 14px; display: block; text-align: center;">
+                        📖 View Installation Guide
+                    </a>
+                </article>
+
+                <!-- Software 3: CamScanner -->
+                <article class="category-card" style="padding: 25px; text-align: left; cursor: default;">
+                    <div style="display: flex; align-items: center; gap: 15px; margin-bottom: 15px;">
+                        <span style="font-size: 30px;">📷</span>
+                        <h3 style="margin: 0;">CamScanner</h3>
+                    </div>
+                    <p style="color: #aebbd0; font-size: 15px; margin-bottom: 20px;">
+                        A powerful document scanning app to convert physical papers into high-quality PDFs.
+                    </p>
+                    
+                    <a href="https://www.camscanner.com/download" target="_blank" class="main-btn" style="width: 100%; text-align: center; margin-bottom: 10px; display: block; box-sizing: border-box;">⬇ Download Setup</a>
+                    
+                    <a href="install-camscanner.html" style="color: #38bdf8; text-decoration: none; font-size: 14px; display: block; text-align: center;">
+                        📖 View Installation Guide
+                    </a>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer-bottom">
+            <p class="developed-by">Developed By</p>
+            <div class="designer-box">
+                <span>Kainth.G</span>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
